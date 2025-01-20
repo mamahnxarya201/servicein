@@ -1,0 +1,94 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #f7f8fc;
+    color: #333;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+    background: linear-gradient(90deg, #1845ad, #23a2f6);
+    color: white;
+}
+
+nav h4 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff512f;
+}
+
+.package-form {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.package-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.package-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.package-form input,
+.package-form textarea {
+    width: 96%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif; /* Ensure font consistency */
+    font-size: 16px; /* Adjust font size for better readability */
+}
+
+.package-form input::placeholder,
+.package-form textarea::placeholder {
+    color: #aaa; /* Placeholder text color */
+}
+
+.package-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #23a2f6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif; /* Ensure font consistency */
+    font-size: 16px; /* Adjust font size for better readability */
+}
+
+.package-form button:hover {
+    background-color: #1d8ce3;
+}

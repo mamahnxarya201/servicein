@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/paket.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="package-form">
+        <h1>Detail Pengiriman</h1>
+        {{ form_start(form) }}
+        <label for="recipient-name">Nama Penerima</label>
+        {{ form_widget(form.recipientName, {'attr': {'placeholder': 'Masukkan nama penerima'}}) }}
+
+        <label for="address">Alamat Pengiriman</label>
+        {{ form_widget(form.address, {'attr': {'placeholder': 'Masukkan alamat lengkap'}}) }}
+
+        <label for="phone">Nomor Telepon</label>
+        {{ form_widget(form.phone, {'attr': {'placeholder': 'Masukkan nomor telepon'}}) }}
+
+        {{ form_widget(form.submit, {'attr': {'class': 'checkout-button'}}) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

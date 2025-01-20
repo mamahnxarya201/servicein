@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{#{% block stylesheets %}#}
+{#    <link rel="stylesheet" href="{{ asset('styles/home.css') }}">#}
+{#{% endblock %}#}
+
+{% block content %}
+    <div class="hero">
+        <h1>Service Komputer & Laptop<br><span class="highlight">Cepat & Terpercaya</span></h1>
+        <p>ServiceIN memberikan solusi terbaik untuk perbaikan perangkat Anda dengan tenaga ahli profesional.</p>
+    </div>
+
+    <div class="image-section">
+        <h2>Galeri Kami</h2>
+        <div class="imagehome">
+            <img src= "{{ asset('images/pc1.jpg') }}" alt="PC1">
+            <img src= "{{ asset('images/pc2.jpg') }}" alt="PC2">
+            <img src= "{{ asset('images/pc3.jpg') }}" alt="PC3">
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 ServiceIN.</p>
+    </div>
+{% endblock %}
