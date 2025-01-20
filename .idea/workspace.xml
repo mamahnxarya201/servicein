@@ -5,52 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a60631c3-09f9-4413-8cfd-846885971941" name="Changes" comment="init project">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/15058480-f51f-4003-ac06-eabc438a0ae0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/15058480-f51f-4003-ac06-eabc438a0ae0/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/15058480-f51f-4003-ac06-eabc438a0ae0/storage_v2/_src_/schema/servicein.mvps9A.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/servicein.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/corsair.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/motherboard.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/pc1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/pc2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/pc3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/processor.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/ssd evo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/ssd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/styles/home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/styles/katalog.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/styles/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/styles/paket.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/styles/pembayaran.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/styles/serpis.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20250115044451.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/PageController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Paket.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/PaketFormType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/PaketRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/page/home.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/page/katalog.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/page/paket.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/security/register.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ServiceFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/15058480-f51f-4003-ac06-eabc438a0ae0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/15058480-f51f-4003-ac06-eabc438a0ae0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Paket.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Paket.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/PaketFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PaketFormType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/page/paket.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/page/paket.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,8 +224,17 @@
       <workItem from="1736828246533" duration="4566000" />
       <workItem from="1736914699134" duration="4997000" />
       <workItem from="1737099730768" duration="4623000" />
-      <workItem from="1737347461904" duration="2796000" />
+      <workItem from="1737347461904" duration="5392000" />
     </task>
+    <task id="LOCAL-00001" summary="init project">
+      <option name="closed" value="true" />
+      <created>1737355665311</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1737355665311</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Types\UuidType;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -36,6 +38,24 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(length: 255)]
     private ?string $email = null;
+
+    /**
+     * @var Collection<int, Paket>
+     */
+    #[ORM\OneToMany(targetEntity: Paket::class, mappedBy: 'user', orphanRemoval: true)]
+    private Collection $pakets;
+
+    /**
+     * @var Collection<int, ServiceSchedule>
+     */
+    #[ORM\OneToMany(targetEntity: ServiceSchedule::class, mappedBy: 'user')]
+    private Collection $serviceSchedules;
+
+    public function __construct()
+    {
+        $this->pakets = new ArrayCollection();
+        $this->serviceSchedules = new ArrayCollection();
+    }
 
     public function getId(): ?Uuid
     {
@@ -120,6 +140,66 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setEmail(string $email): static
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Paket>
+     */
+    public function getPakets(): Collection
+    {
+        return $this->pakets;
+    }
+
+    public function addPaket(Paket $paket): static
+    {
+        if (!$this->pakets->contains($paket)) {
+            $this->pakets->add($paket);
+            $paket->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removePaket(Paket $paket): static
+    {
+        if ($this->pakets->removeElement($paket)) {
+            // set the owning side to null (unless already changed)
+            if ($paket->getUser() === $this) {
+                $paket->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ServiceSchedule>
+     */
+    public function getServiceSchedules(): Collection
+    {
+        return $this->serviceSchedules;
+    }
+
+    public function addServiceSchedule(ServiceSchedule $serviceSchedule): static
+    {
+        if (!$this->serviceSchedules->contains($serviceSchedule)) {
+            $this->serviceSchedules->add($serviceSchedule);
+            $serviceSchedule->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeServiceSchedule(ServiceSchedule $serviceSchedule): static
+    {
+        if ($this->serviceSchedules->removeElement($serviceSchedule)) {
+            // set the owning side to null (unless already changed)
+            if ($serviceSchedule->getUser() === $this) {
+                $serviceSchedule->setUser(null);
+            }
+        }
 
         return $this;
     }

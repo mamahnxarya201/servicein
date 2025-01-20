@@ -2,13 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\PaketRepository;
+use App\Repository\ServiceScheduleRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Types\UuidType;
 use Symfony\Component\Uid\Uuid;
 
-#[ORM\Entity(repositoryClass: PaketRepository::class)]
-class Paket
+#[ORM\Entity(repositoryClass: ServiceScheduleRepository::class)]
+class ServiceSchedule
 {
     #[ORM\Id]
     #[ORM\Column(type: UuidType::NAME, unique: true)]
@@ -17,7 +18,7 @@ class Paket
     private ?Uuid $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $penerima = null;
+    private ?string $detail = null;
 
     #[ORM\Column(length: 255)]
     private ?string $alamat = null;
@@ -25,26 +26,28 @@ class Paket
     #[ORM\Column(length: 255)]
     private ?string $notelp = null;
 
-    #[ORM\ManyToOne(inversedBy: 'pakets')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?User $user = null;
+    #[ORM\Column(type: Types::DATETIMETZ_MUTABLE)]
+    private ?\DateTimeInterface $date = null;
 
-    #[ORM\ManyToOne(inversedBy: 'pakets')]
-    private ?Katalog $barang = null;
+    #[ORM\Column(length: 255)]
+    private ?string $type = null;
+
+    #[ORM\ManyToOne(inversedBy: 'serviceSchedules')]
+    private ?User $user = null;
 
     public function getId(): ?Uuid
     {
         return $this->id;
     }
 
-    public function getPenerima(): ?string
+    public function getDetail(): ?string
     {
-        return $this->penerima;
+        return $this->detail;
     }
 
-    public function setPenerima(string $penerima): static
+    public function setDetail(string $detail): static
     {
-        $this->penerima = $penerima;
+        $this->detail = $detail;
 
         return $this;
     }
@@ -73,6 +76,30 @@ class Paket
         return $this;
     }
 
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): static
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): static
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
     public function getUser(): ?User
     {
         return $this->user;
@@ -81,18 +108,6 @@ class Paket
     public function setUser(?User $user): static
     {
         $this->user = $user;
-
-        return $this;
-    }
-
-    public function getBarang(): ?Katalog
-    {
-        return $this->barang;
-    }
-
-    public function setBarang(?Katalog $barang): static
-    {
-        $this->barang = $barang;
 
         return $this;
     }

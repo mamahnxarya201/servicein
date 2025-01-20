@@ -3,7 +3,10 @@
 namespace App\Controller;
 
 use App\Form\PaketFormType;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
@@ -26,10 +29,19 @@ class PageController extends AbstractController
 
     #[Route('/paket', name: 'paket_page')]
     #[IsGranted("ROLE_USER")]
-    public function paket(): Response
+    public function paket(Request $request, EntityManagerInterface $entityManager): Response
     {
+        $form = $this->createForm(PaketFormType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $paket = $form->getData();
+            $entityManager->persist($paket);
+            $entityManager->flush();
+        }
+
         return $this->render('page/paket.html.twig', [
-            'form' => $this->createForm(PaketFormType::class)->createView()
+            'form' => $form->createView()
         ]);
     }
 }
