@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Form\PaketFormType;
-use Doctrine\ORM\EntityManager;
+use App\Form\ServiceFormType;
+use App\Repository\KatalogRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -22,9 +24,12 @@ class PageController extends AbstractController
 
     #[Route('/katalog', name: 'katalog_page')]
     #[IsGranted("ROLE_USER")]
-    public function katalog(): Response
+    public function katalog(KatalogRepository $repository): Response
     {
-        return $this->render('page/katalog.html.twig');
+        $listBarang = $repository->findAll();
+        return $this->render('page/katalog.html.twig', [
+            'items' => $listBarang,
+        ]);
     }
 
     #[Route('/paket', name: 'paket_page')]
@@ -41,6 +46,32 @@ class PageController extends AbstractController
         }
 
         return $this->render('page/paket.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
+
+    #[Route('/service', name: 'service_page')]
+    #[IsGranted("ROLE_USER")]
+    public function serviceForm(Request $request, EntityManagerInterface $entityManager, Security $security): Response
+    {
+        $form = $this->createForm(ServiceFormType::class);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $service = $form->getData();
+            /**
+             * @var \App\Entity\User $user
+             */
+            $user = $security->getUser();
+            $service->setUser($user);
+
+            $entityManager->persist($service);
+            $entityManager->flush();
+
+            $this->addFlash('success', 'Jadwal service berhasil ditambahkan, tim kami akan segera otw');
+            return $this->redirectToRoute('service_page');
+        }
+
+        return $this->render('page/service.html.twig', [
             'form' => $form->createView()
         ]);
     }

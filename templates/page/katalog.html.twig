@@ -8,39 +8,15 @@
     <section class="catalog">
         <h1>Katalog Komponen Komputer</h1>
         <div class="catalog-items">
-            <!-- Item 1 -->
-            <div class="catalog-item">
-                <img src="{{ asset('images/corsair.jpg') }}" alt="RAM">
-                <h2>RAM</h2>
-                <p>DDR4 3200MHz, 16GB Dual Channel</p>
-                <div class="price">Rp 1.200.000</div>
-                <a href="{{ path('paket_page') }}" class="buy-button">Beli Sekarang</a>
-            </div>
-            <!-- Item 2 -->
-            <div class="catalog-item">
-                <img src="{{ asset('images/motherboard.jpg') }}" alt="Motherboard">
-                <h2>Motherboard</h2>
-                <p>ATX, Socket AM4, 4x DDR4</p>
-                <div class="price">Rp 2.500.000</div>
-                <a href="{{ path('paket_page') }}" class="buy-button">Beli Sekarang</a>
-            </div>
-            <!-- Item 3 -->
-            <div class="catalog-item">
-                <img src="{{ asset('images/processor.jpg') }}" alt="Processor">
-                <h2>Processor</h2>
-                <p>AMD Ryzen 5 5600X, 6-Core</p>
-                <div class="price">Rp 3.200.000</div>
-                <a href="{{ path('paket_page') }}" class="buy-button">Beli Sekarang</a>
-            </div>
-            <!-- Item 4 -->
-            <div class="catalog-item">
-                <img src="{{ asset('images/ssd evo.jpg') }}" alt="SSD">
-                <h2>SSD</h2>
-                <p>NVMe M.2, 1TB, 3500MB/s</p>
-                <div class="price">Rp 1.800.000</div>
-                <a href="{{ path('paket_page') }}"  class="buy-button">Beli Sekarang</a>
-            </div>
+            {% for item in items %}
+                <div class="catalog-item">
+                    <img src="{{ asset('images/' ~ item.tipe | lower ~ '.jpg') }}" alt="{{ item.tipe }}">
+                    <h2>{{ item.tipe }}</h2>
+                    <p>{{ item.name }}</p>
+                    <div class="price">{{ item.harga }}</div>
+                    <a href="{{ path('paket_page') }}" class="buy-button">Beli Sekarang</a>
+                </div>
+            {% endfor %}
         </div>
     </section>
-
 {% endblock %}

@@ -4,16 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a60631c3-09f9-4413-8cfd-846885971941" name="Changes" comment="init project">
-      <change afterPath="$PROJECT_DIR$/src/Form/ServiceFormType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/15058480-f51f-4003-ac06-eabc438a0ae0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/15058480-f51f-4003-ac06-eabc438a0ae0.xml" afterDir="false" />
+    <list default="true" id="a60631c3-09f9-4413-8cfd-846885971941" name="Changes" comment="refractor db">
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/KatalogFixtures.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/page/service.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/servicein.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/servicein.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Paket.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Paket.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/PaketFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PaketFormType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/page/paket.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/page/paket.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Katalog.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Katalog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ServiceFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ServiceFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/page/katalog.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/page/katalog.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +37,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/vendor/symfony/form/FormBuilderInterface.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -168,6 +175,8 @@
       <path value="$PROJECT_DIR$/vendor/masterminds/html5" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-uuid" />
       <path value="$PROJECT_DIR$/vendor/symfony/uid" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -195,6 +204,9 @@
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
       &quot;mariadb&quot;
+    ],
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;Twig&quot;
     ]
   }
 }</component>
@@ -224,7 +236,8 @@
       <workItem from="1736828246533" duration="4566000" />
       <workItem from="1736914699134" duration="4997000" />
       <workItem from="1737099730768" duration="4623000" />
-      <workItem from="1737347461904" duration="5392000" />
+      <workItem from="1737347461904" duration="9134000" />
+      <workItem from="1737515297411" duration="4875000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -234,7 +247,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737355665311</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refractor db">
+      <option name="closed" value="true" />
+      <created>1737358915741</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1737358915741</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +263,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init project" />
-    <option name="LAST_COMMIT_MESSAGE" value="init project" />
+    <MESSAGE value="refractor db" />
+    <option name="LAST_COMMIT_MESSAGE" value="refractor db" />
   </component>
 </project>

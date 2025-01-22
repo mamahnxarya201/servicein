@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/serpis.css') }}">
+{% endblock %}
+
+
+{% block content %}
+    {% for message in app.flashes('success') %}
+        <div class="flash-notice">
+            <script>
+                alert('{{ message }}')
+            </script>
+        </div>
+    {% endfor %}
+
+    <div class="section2" id="section2">
+        <div class="form-container">
+            <h1><i class="fa-solid fa-tools"></i> Form Detail Service</h1>
+            <section class="form-section">
+                {{ form_start(form) }}
+                <label for="detail"><i class="fa-solid fa-wrench"></i> Detail Kerusakan</label>
+                {{ form_widget(form.detail, {'attr': {'placeholder': 'Jelaskan kerusakan pada perangkat Anda...'}}) }}
+
+                <label for="address"><i class="fa-solid fa-location-dot"></i> Alamat</label>
+                {{ form_widget(form.alamat, {'attr': {'placeholder': 'Masukkan alamat Anda'}}) }}
+
+                <label for="phone"><i class="fa-solid fa-phone"></i> Nomor Telepon</label>
+                {{ form_widget(form.notelp, {'attr': {'placeholder': 'Masukkan nomor telepon Anda'}}) }}
+
+                <label for="date"><i class="fa-solid fa-calendar"></i> Tanggal Service</label>
+                {{ form_widget(form.date) }}
+
+                <label for="service-type"><i class="fa-solid fa-handshake"></i> Pilihan Layanan</label>
+                {{ form_widget(form.type) }}
+
+                <button type="submit"><i class="fa-solid fa-paper-plane"></i> Kirim</button>
+                {{ form_end(form) }}
+            </section>
+        </div>
+    </div>
+{% endblock %}
